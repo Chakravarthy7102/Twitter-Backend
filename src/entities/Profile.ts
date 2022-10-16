@@ -3,6 +3,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  Index,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
@@ -12,6 +13,7 @@ export class Profile extends BaseEntity {
   @PrimaryGeneratedColumn("uuid")
   id: number;
 
+  @Index("userid-index")
   @Column({ type: "uuid" })
   userId: string;
 

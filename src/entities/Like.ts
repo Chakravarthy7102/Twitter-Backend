@@ -12,7 +12,7 @@ import {
 import { Post } from "./Post";
 import { User } from "./User";
 
-@Entity()
+@Entity({ name: "likes" })
 export class Like extends BaseEntity {
   @PrimaryGeneratedColumn("uuid")
   id: number;

@@ -17,6 +17,7 @@ export class Post extends BaseEntity {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
+  @Column({ type: "json", array: true, default: [] })
   @OneToMany(() => Like, (like) => like.post)
   likes: Like[];
 
@@ -29,6 +30,7 @@ export class Post extends BaseEntity {
   })
   content: string;
 
+  @Column({ type: "json", array: true, default: [] })
   @OneToMany(() => Retweet, (retweet) => retweet.post)
   retweets: Retweet[];
 

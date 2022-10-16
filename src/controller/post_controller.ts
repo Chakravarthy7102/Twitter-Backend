@@ -83,6 +83,7 @@ class PostController {
         .createQueryBuilder("post")
         .leftJoinAndSelect("post.user", "user")
         .leftJoinAndSelect("post.likes", "likes")
+        .leftJoinAndSelect("post.retweets", "retweets")
         .orderBy("post.created_at", "DESC")
         .select([
           "user.username",
@@ -90,6 +91,7 @@ class PostController {
           "user.profilePic",
           "post.id",
           "post.content",
+          "retweets",
           "likes",
         ])
         .getMany();
