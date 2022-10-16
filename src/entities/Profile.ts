@@ -26,12 +26,6 @@ export class Profile extends BaseEntity {
   @Column({ type: "text", default: "" })
   about: string;
 
-  @Column({ type: "int", default: 0 })
-  followers: number;
-
-  @Column({ type: "int", default: 0 })
-  following: number;
-
   @Column()
   @CreateDateColumn()
   created_at: Date;

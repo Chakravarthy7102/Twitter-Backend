@@ -40,6 +40,12 @@ export class User extends BaseEntity {
   @OneToMany(() => Post, (photo) => photo.user)
   posts: Post[];
 
+  @Column({ type: "int", default: 0 })
+  followers: number;
+
+  @Column({ type: "int", default: 0 })
+  following: number;
+
   @Column()
   @CreateDateColumn()
   created_at: Date;

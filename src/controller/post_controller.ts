@@ -91,7 +91,6 @@ class PostController {
           "post.id",
           "post.content",
           "likes",
-          `jsonb_array_length(likes, ${1})`,
         ])
         .getMany();
 
